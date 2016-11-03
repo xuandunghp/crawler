@@ -3,7 +3,7 @@ class CreateTags < ActiveRecord::Migration[5.0]
     create_table :tags do |t|
       t.string :name
       t.string :source_list
-      t.integer :user_id
+      t.references :user, foreign_key: true
       t.string :tag
 
       t.timestamps
