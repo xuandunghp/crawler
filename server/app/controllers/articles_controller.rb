@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  efore_action :authenticate_user!
   before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def new
@@ -9,6 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    @article = Article.create(article_params)
     if @article.save
       flash[:notice] = "Create succeed"
       redirect_to articles_path

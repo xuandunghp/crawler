@@ -1,0 +1,9 @@
+- if @sources.blank?
+  p There are not any source currently in the system.
+- else
+  p These are the source in our system
+  ul#sources
+    - @sources.each do |c|
+      li
+        = link_to c.name, {:action => 'show', :id => c.id}
+p= link_to "Add new source",  :action => "new"

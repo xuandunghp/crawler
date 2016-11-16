@@ -3,4 +3,5 @@ class Source < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: 255}
   validates :source_link, presence: true, length: {maximum: 255}
+  validates :user_id, presence: true
 end
