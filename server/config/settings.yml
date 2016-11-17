@@ -1,0 +1,3 @@
+model:
+  article:
+    title_max_length: 255

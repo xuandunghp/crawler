@@ -1,0 +1,7 @@
+ruby:
+  article = @data[:article]
+  sources = @data[:sources]
+
+h1 Edit article
+
+= render "form", article: article, sources: sources, type: :update

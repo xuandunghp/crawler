@@ -4,6 +4,7 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :link
       t.text :content
+      # t.references :source, foreign_key: true
       t.datetime :posted_at
       t.string :author
 
