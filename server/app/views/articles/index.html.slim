@@ -1,0 +1,9 @@
+- if @articles.blank?
+  p There are not any artilce currently in the system.
+- else
+  p These are the current articles in our system
+  ul#articles
+    - @articles.each do |c|
+      li
+        = link_to c.title, {:action => 'show', :id => c.id}
+p= link_to "Add new article",  :action => "new"
