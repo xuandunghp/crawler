@@ -1,0 +1,2 @@
+module LikedArticlesHelper
+end
