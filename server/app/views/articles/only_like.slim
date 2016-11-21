@@ -1,0 +1,9 @@
+- if @articles.blank?
+  p You are not liked any artilce.
+- else
+  p You liked
+  ul#articles
+    - @articles.each do |c|
+      li
+        = link_to c.title, {:action => 'show', :id => c.id}
+p= link_to "Add new article",  :action => "new"

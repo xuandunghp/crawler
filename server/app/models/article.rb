@@ -2,7 +2,6 @@ class Article < ApplicationRecord
   SETTINGS = Settings.model.article
 
   belongs_to :source
-  belongs_to :User
   has_many :article_tags, dependent: :destroy
   has_many :tags, through: :article_tag, dependent: :destroy
 
@@ -13,4 +12,6 @@ class Article < ApplicationRecord
   def self.test
     1
   end
+
+
 end

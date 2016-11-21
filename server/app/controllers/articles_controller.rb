@@ -24,8 +24,18 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+      @articles = Article.all
   end
+
+  def only_like
+    fliter = LikedArticle.where(user_id: current_user)
+    arr = []
+    fliter.each do |fl|
+      arr.push(fl.article_id)
+    end
+    @articles = Article.where(id: arr)
+  end
+
 
   def show
   end
