@@ -1,0 +1,12 @@
+p 
+- if current_user
+ = "welcome    "  
+ = current_user.email
+ = "               "
+ = link_to "Articles", articles_path, method: :get
+ = "               "
+ = link_to "Source", sources_path, method: :get
+ = "               "
+ = link_to "MyArticles", '/articles/only_like', method: :get
+ = "               "
+ = link_to "Signout", destroy_user_session_path, method: :delete

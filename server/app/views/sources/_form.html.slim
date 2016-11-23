@@ -1,0 +1,28 @@
+ul
+  - @source.errors.full_messages.each do |message|
+    li
+      = message
+
+= form_for source do |f|
+  p
+    = f.label :name
+    = f.text_field :name
+  
+  p
+    = f.label :link
+    = f.text_field :source_link
+  
+  p
+    = f.hidden_field :user_id, value: current_user.id
+    / #, required: true, value: 1     #must be implement
+    / = f.text_field :email, required: true, class: 'form-control', value:current_user.email
+
+    
+  p
+    = f.label :tags
+    = f.text_field :tags
+    / select_tag 'user_id', options_for_select(@users.collect{ |u| [u.name, u.id] })
+    / = f.select :source_id, options_from_collection_for_select(sources, :id, :name), prompt: true
+  
+  p
+    = f.submit "Submit"
